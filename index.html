@@ -225,28 +225,28 @@
     </div>
 
     <div class="mt-4">
-    <script src="https://searchappletuqast.z8.web.core.windows.net/aiconcierge.js"></script>
-    <script>
-        window.onload = () => {
-            if (window.Assistant) {
-                const assistant = new Assistant({
-                    target: "target-search-applet", //use this id to render search applet
-                    brandId: "ff96da41-4a9e-4f48-96c1-2c3a7483cf6f", //Add brandId here eg : 11111111-1111-1111-1111-111111111111
-                    sourceType: "PROPERTYSEARCHAPPLET",
-                    agencyAgentIds: ["SM123547"], //Add agency agent ids here eg: ["ABC123547", "XYZ123547"]
-                    borderRadius: "8px" //Set the border radius of search applet
-                });
-                assistant.init();
-
-                window.addEventListener("search-result", (event) => {
-                    console.log("Third-party received search result:", event.detail); //event.detail will provide searched property result
-
-                });
-            } else {
-                console.error("Assistant not loaded.");
-            }
-        };
-    </script>
+            <script src="https://searchappletuqast.z8.web.core.windows.net/aiconcierge.js"></script>
+            <script>
+              window.onload = () => {
+                if (window.Assistant) {
+                  const assistant = new Assistant({
+                    target: "target-search-applet", // Use this id to render search applet
+                    brandId: "196962f3-36e4-433e-b68e-72bcc0c49344", // Add brandId here
+                    sourceType: "PROPERTYSEARCHAPPLET", // Optional: Define source type if needed
+                    agencyAgentIds: [], // Add agency agent ids here
+                    borderRadius: "8px" // Set the border radius of search applet
+                  });
+            
+                  assistant.init();
+            
+                  window.addEventListener("search-result", (e) => {
+                    console.log("Third-party received search result:", e.detail); // e.detail provides searched property result
+                  });
+                } else {
+                  console.error("window.Assistant is not defined");
+                }
+              };
+            </script>
     </div>
 
 </body>
