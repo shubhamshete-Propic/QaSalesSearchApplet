@@ -73,31 +73,31 @@
           }
         });
 
-        // Hide card section when clicking outside of card section and search applet
-        function onDocPointerDown(e) {
-          if (!cardSection) return;
+        // // Hide card section when clicking outside of card section and search applet
+        // function onDocPointerDown(e) {
+        //   if (!cardSection) return;
 
-          // if already hidden do nothing
-          if (cardSection.style.display === "none") return;
+        //   // if already hidden do nothing
+        //   if (cardSection.style.display === "none") return;
 
-          const clickedInsideCards = cardSection.contains(e.target);
-          const clickedInsideApplet =
-            appletTarget && appletTarget.contains(e.target);
+        //   const clickedInsideCards = cardSection.contains(e.target);
+        //   const clickedInsideApplet =
+        //     appletTarget && appletTarget.contains(e.target);
 
-          if (!clickedInsideCards && !clickedInsideApplet) {
-            cardSection.style.display = "none";
-          }
-        }
+        //   if (!clickedInsideCards && !clickedInsideApplet) {
+        //     cardSection.style.display = "none";
+        //   }
+        // }
 
         // Use capture so it still works even if widgets stopPropagation()
         document.addEventListener("pointerdown", onDocPointerDown, true);
 
-        // Optional: close on Escape
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape" && cardSection) {
-            cardSection.style.display = "none";
-          }
-        });
+        // // Optional: close on Escape
+        // document.addEventListener("keydown", (e) => {
+        //   if (e.key === "Escape" && cardSection) {
+        //     cardSection.style.display = "none";
+        //   }
+        // });
       });
     </script>
 
@@ -486,7 +486,7 @@
         top: calc(100% + -273px); /* shows below the search applet */
         left: 0;
         width: 520px;
-        max-width: 100%;
+        /* max-width: 100%; */
         max-height: 600px;
         overflow-y: auto;
         z-index: 50;
